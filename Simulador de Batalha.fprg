@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andri"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-24 06:06:36 "/>
+        <attribute name="created" value="YW5kcmk7QU5EUklXLUZFTElQRTsyMDIxLTA4LTI0OyIwMjozNzo1MiAiOzI2NTQ="/>
+        <attribute name="edited" value="YW5kcmk7QU5EUklXLUZFTElQRTsyMDIxLTA4LTI0OyIwNjowNjozNiAiOzU7Mjc2OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ataque, atInimigo, defesa, defInimigo, vida, vidaInimigo, dano, danoInimigo, danoTotalInimigo, danoTotal, level, exp" type="Integer" array="False" size=""/>
+            <declare name="nome, nomeInimigo" type="String" array="False" size=""/>
+            <output expression="&quot;Entre com o nome do seu Guerreiro!&quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Entre com o valor de ataque de: &quot; &amp; nome" newline="True"/>
+            <input variable="ataque"/>
+            <output expression="&quot;Entre com o valor de defesa de: &quot; &amp; nome" newline="True"/>
+            <input variable="defesa"/>
+            <output expression="&quot;Entre com o valor da vida de: &quot; &amp; nome" newline="True"/>
+            <input variable="vida"/>
+            <output expression="&quot;Entre com o nome do seu inimigo!&quot;" newline="True"/>
+            <input variable="nomeInimigo"/>
+            <output expression="&quot;Entre com o valor de Ataque de: &quot; &amp; nomeInimigo" newline="True"/>
+            <input variable="atInimigo"/>
+            <output expression="&quot;Entre com o valor da defesa de: &quot; &amp; nomeInimigo" newline="True"/>
+            <input variable="defInimigo"/>
+            <output expression="&quot;Entre com o valor da vida de: &quot; &amp; nomeInimigo" newline="True"/>
+            <input variable="vidaInimigo"/>
+            <assign variable="exp" expression="0"/>
+            <assign variable="level" expression="0"/>
+            <assign variable="danoTotal" expression="0"/>
+            <assign variable="danoTotalInimigo" expression="0"/>
+            <if expression="ataque==atInimigo &amp;&amp; defesa==defInimigo">
+                <then>
+                    <output expression="nome &amp; &quot; e &quot; &amp; nomeInimigo &amp; &quot; n&#227;o causam dano ao outro e Empataram a Batalha!&quot;" newline="True"/>
+                    <breakpoint/>
+                </then>
+                <else/>
+            </if>
+            <if expression="ataque&gt;defInimigo">
+                <then>
+                    <while expression="vidaInimigo&gt;=0">
+                        <assign variable="dano" expression="ataque-defInimigo"/>
+                        <assign variable="danoInimigo" expression="atInimigo-defesa"/>
+                        <assign variable="vidaInimigo" expression="vidaInimigo-dano"/>
+                        <assign variable="vida" expression="vida-danoInimigo"/>
+                        <assign variable="exp" expression="exp+1"/>
+                        <assign variable="danoTotal" expression="danoTotal+dano"/>
+                        <assign variable="danoTotalInimigo" expression="danoTotalInimigo+danoInimigo"/>
+                        <if expression="exp % 5 = 0">
+                            <then>
+                                <assign variable="level" expression="level+1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <if expression="vida&lt;=0">
+                            <then>
+                                <output expression="nome &amp; &quot;, sua vida acabou e voc&#234; Perdeu a Batalha!&quot;" newline="True"/>
+                                <output expression="nome &amp; &quot;, voc&#234; causou &quot; &amp; danoTotal &amp; &quot; dano.&quot;" newline="True"/>
+                                <output expression="nomeInimigo &amp; &quot;, causou &quot; &amp; danoTotalInimigo &amp; &quot; dano.&quot;" newline="True"/>
+                                <breakpoint/>
+                            </then>
+                            <else/>
+                        </if>
+                    </while>
+                    <output expression="&quot;A vida de &quot; &amp; nomeInimigo &amp; &quot;, acabou. &quot; &amp; nome &amp; &quot;, voc&#234; Venceu a Batalha!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="nome &amp; &quot;, voc&#234; n&#227;o causa dano e Perdeu a Batalha!&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="nome &amp; &quot;, Seu level &#233; &quot; &amp; level &amp; &quot;, experi&#234;ncia: &quot; &amp; exp" newline="True"/>
+            <output expression="nome &amp; &quot;, voc&#234; Causou: &quot; &amp; danoTotal &amp; &quot; dano.&quot;" newline="True"/>
+            <output expression="nomeInimigo &amp; &quot;, causou: &quot; &amp; danoTotalInimigo &amp; &quot; dano.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
