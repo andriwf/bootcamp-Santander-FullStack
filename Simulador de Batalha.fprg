@@ -4,13 +4,14 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="andri"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2021-08-24 06:06:36 "/>
+        <attribute name="saved" value="2021-08-24 06:36:21 "/>
         <attribute name="created" value="YW5kcmk7QU5EUklXLUZFTElQRTsyMDIxLTA4LTI0OyIwMjozNzo1MiAiOzI2NTQ="/>
-        <attribute name="edited" value="YW5kcmk7QU5EUklXLUZFTElQRTsyMDIxLTA4LTI0OyIwNjowNjozNiAiOzU7Mjc2OA=="/>
+        <attribute name="edited" value="YW5kcmk7QU5EUklXLUZFTElQRTsyMDIxLTA4LTI0OyIwNjozNjoyMSAiOzY7Mjc2Ng=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
+            <output expression="&quot;Nessa aplica&#231;&#227;o, voc&#234; vai definir o nome, o ataque, a defesa e a vida de dois personagens que v&#227;o se enfrentar at&#233; suas vidas chegarem a zero. Os crit&#233;rios s&#227;o:&#13;&#10;&#13;&#10;Ataque - Defesa = Dano&#13;&#10;&#13;&#10;Ataque e defesas iguais = Empate&#13;&#10;&#13;&#10;Ataque menor que a defesa do inimigo = derrota&#13;&#10;&#13;&#10;O level do Guerreio sobre a cada 5xp acumulada&quot;" newline="True"/>
             <declare name="ataque, atInimigo, defesa, defInimigo, vida, vidaInimigo, dano, danoInimigo, danoTotalInimigo, danoTotal, level, exp" type="Integer" array="False" size=""/>
             <declare name="nome, nomeInimigo" type="String" array="False" size=""/>
             <output expression="&quot;Entre com o nome do seu Guerreiro!&quot;" newline="True"/>
